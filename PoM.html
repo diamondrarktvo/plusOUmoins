@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>brouillon</title>
+	<script type="text/javascript"> /*dans cette fonction, on va prendre comme argument 2 chiffres qui vont représenter la valeur MINIMALE et MAXIMALE*/
+		function nombre(min, max){
+			let nomb = min + (max)*Math.random();
+			return Math.floor(nomb);
+		}
+	</script>
+</head>
+<body>
+	<script type="text/javascript">
+
+		let nb = nombre(1, 100); /*voici le nombre à deviner générer par l'ordinateur*/
+		let msg = "Essayer de deviner le nombre !"; /*le message principale à afficher*/
+		let msg3 = "Bingo, vous avez trouvez le bon nombre "; /*le message à afficher si l'utilisateur a réussis à trouver le bon nombre*/
+		let compteur = 0; /*compteur utilisé pour compté le nombre de tentative faite par l'utilisateur*/
+		let entre; /*une variable qui sert à recevoir les chiffres entrées par l'utilisateur*/
+
+		/*ici on utilise la boucle DO....WHILE car on demande d'abord la valeur, tester dans une condition avant de continuer la boucle si celle-là est faux*/
+		do{
+			entre = prompt(msg);
+			compteur++;
+
+			if(nb<entre){
+			  msg = "diminuer un peu!"; /*ici, on change tout simplement la valeur de MSG afin d'éviter de changer de boîte de dialogue à chaque fois*/
+			}
+			else{
+			  msg = "augmenter un peu!";
+			}
+		}
+		while(nb != entre);
+
+		alert(msg3 +" "+ "en" + " " + compteur +" "+"coups"+" "+ nb);
+
+		
+		
+
+
+
+		
+ 
+	</script>
+
+</body>
+</html>
